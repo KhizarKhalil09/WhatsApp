@@ -1,0 +1,272 @@
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+
+
+class Home extends StatefulWidget {
+  const Home({ Key? key }) : super(key: key);
+
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
+late TabController _controller;
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller = TabController(length: 4, vsync: this, initialIndex: 0);
+  }
+
+  @override
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+   appBar:AppBar(
+     backgroundColor: Colors.greenAccent,
+     title: Text("Whats App"),
+     actions: [
+       IconButton(onPressed: (){}, icon: Icon(Icons.search)
+       ),
+       PopupMenuButton<String>(itemBuilder: (BuildContext){
+         return[
+     PopupMenuItem(child: Text("New group"),value:"new group",),
+ PopupMenuItem(child: Text("New boarstcast"),value:"new boarstcas",),
+ PopupMenuItem(child: Text("Whatsapp web"),value:"whatsapp web",),
+ PopupMenuItem(child: Text("Starred massages"),value:"starred massages",),
+ PopupMenuItem(child: Text("Setting"),value:"setting",),
+
+
+         ];
+       }
+       )
+     
+     ],
+     bottom: TabBar(
+       controller: _controller,
+       tabs:[
+         Tab(
+           icon:Icon(Icons.camera_alt),
+         ),
+         Tab(
+    text: "chats ", 
+         ),
+         Tab(text: "Status",),
+         Tab(  text: "Calls",)
+       ] ,
+       
+     ),
+   ) ,    
+   
+    
+    
+        
+      body: SingleChildScrollView
+      (
+        child: Column(
+          children: [
+            ListTile(
+              leading: CircleAvatar(
+                radius: 50,
+              
+                backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ6nZFIoWIKIXAAzXXKc1lrQyIVUnQQ58pizLBsCKp11CeGTgcW8Eds5n02KG-utmP_lM&usqp=CAU'),
+            ),
+        
+            title: Text("farooq..."),
+            subtitle: Text("Assalam o Alikum"),
+            trailing: Column(
+              children: [
+                Text("12.00 Am"),
+                
+                CircleAvatar(backgroundColor: Colors.green, radius:10,child: Text("1")),
+        
+          
+                
+              ]
+            )
+            ),
+            ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy7-_ejhfjun3WS6ya6cX5xO38IAZcA5S8em6u-wQHQwrijW4jrI57-NDbbszUJXhZjbo&usqp=CAU'),
+              radius: 50,) ,
+              title: Text("khizar"),
+              subtitle:Row(
+                children: [
+                   Icon(Icons.done_all,color:Colors.blue),
+               Text("send me ?"),
+                ]
+              ),
+            trailing: Column(
+              children: [
+                Text("1:33 Am"),
+              ]
+            )
+            ),
+         ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://1.bp.blogspot.com/-O42XFapJyGk/YQTR_hof3EI/AAAAAAAAERk/bw4-VfYwCGQbvyG9lxVgB7KDYx3Ul0XowCLcBGAsYHQ/s631/hurt%2Bdp%2Bpic.jpeg'),
+              radius: 50,) ,
+              title: Text("zain"),
+              subtitle: Text("nahi yarr ...."),
+            trailing: Column(
+              children: [
+                Text("1:33 Am"),
+                  CircleAvatar(backgroundColor: Colors.green, radius:10,child: Text("2")),
+        
+              ]
+            )
+            ),
+         ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://img.freepik.com/free-photo/empty-champaign-glass-with-small-red-valentine-decorations-blue-background-top-view-copy-space_99418-524.jpg?size=626&ext=jpg'),
+              radius: 50,) ,
+              title: Text("Mama"),
+              subtitle: Text("Deleted this mesage"),
+            trailing: Column(
+              children: [
+                Text("8:53 Pm"),
+              ]
+            )
+            ),
+        ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDUZ48Afn9COE4hbqpLJnVker_VzyDWshsEA&usqp=CAU'),
+              radius: 50,) ,
+              title: Text("My friend"),
+              subtitle:Row(
+                children: [
+                   Icon(Icons.done_all,color:Colors.blue),
+               Text("By"),
+                ]
+              ),
+            trailing: Column(
+              children: [
+                Text("8:3 Pm"),
+              ]
+            )
+            ),
+        ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3s-ygrSUGjha3wNKKQpepTt22hxzpJDSVqg&usqp=CAU'),
+              radius: 50,) ,
+              title: Text("father"),
+              subtitle: Row(
+                children: [
+                   Icon(Icons.done_all,color:Colors.blue),
+              Text("ma bahar hoon"),
+                ],
+              ),
+             
+            trailing: Column(
+              children: [
+                Text("8:53 Pm"),
+              ]
+            )
+            ), 
+             ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR772MuLC1dKh9v2ynN4v1uCcepq0c7aYwa0Q&usqp=CAU'),
+              radius: 50,) ,
+              title: Text("03212101275"),
+              subtitle:Row(
+                children: [
+                  Icon(Icons. record_voice_over_sharp),
+                  Text(" 0:18")
+                ],
+              ),
+            trailing: Column(
+              children: [
+                Text("8:53 Pm"),
+              ]
+            )
+            ),
+        
+        ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS199FIQH-uI8r4HPV3uVHiNWclfkszRpZrqw&usqp=CAU'),
+              radius: 50,) ,
+              title: Text("laiba"),
+              subtitle:Row(
+                children: [
+                  Icon(Icons.photo),
+                  Text("photo"),
+        
+                ],
+              ),
+              trailing: Column(children: [
+                Text("8:09Am")
+              ],),
+            ),
+            
+        
+        
+        ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWCSoAcwVcztL6bDnd9BCVb6xaov4RFH7aDw&usqp=CAU'),
+              radius: 50,) ,
+              title: Text("03258687676"),
+              subtitle:Row(
+                children: [
+                  Icon(Icons.not_interested,color: Colors. black),
+                  Text("you deleted this message"),
+        
+                ], 
+              ),
+               trailing: Column(children: [
+                Text("8:48Am")
+              ],),
+            ),
+        
+        ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://1.bp.blogspot.com/-q95PJEcy2F0/X6VqTz75guI/AAAAAAAADHU/kh1mVZb0CP0LEzBxG0iS1TIqLu3rXjdrQCNcBGAsYHQ/s1280/mood%2Boff%2Bbest%2Bwhatsapp%2Bdp%2Bimages%2Bfree%2Bdownload.jpg'),
+             radius: 50, ),
+              
+              title: Text("hassan"),
+              subtitle: Row(
+                children: [
+                  Icon(Icons.not_interested,color: Colors. black),
+                  Text("you deleted this message"),
+                
+                ],
+              ),
+              trailing: Column(children: [
+                Text("11:48Am")
+              ],),
+            ),
+        
+        ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI_QdTNtupqmZL87na1xGQpXT8dVPHh0Iw6g&usqp=CAU'),
+              radius: 50,) ,
+              title: Text("Aman"),
+              subtitle: Text(""),
+            
+            ),
+        
+        ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR772MuLC1dKh9v2ynN4v1uCcepq0c7aYwa0Q&usqp=CAU'),
+              radius: 50,) ,
+              title: Text("03212107863"),
+              subtitle:Row(
+                children: [
+                  Icon(Icons. record_voice_over_sharp),
+                  Text(" 0:18")
+                ],
+              ),
+            trailing: Column(
+              children: [
+                Text("8:53 Pm"),
+              ]
+            )
+            ),
+            ListTile(
+              leading:CircleAvatar(backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6UjfKFKsL1xOguMVhMx8fwz3KS1x90ErKtA&usqp=CAU'),
+             radius: 50,
+              ),
+              title: Text("Ahmad"),
+              subtitle: Text("Deleted tis mesage"),
+            trailing: Column(
+              children: [
+                Text("8:53 Pm"),
+              ]
+            )
+            )
+        
+        
+          ]),
+      )
+    
+    );
+  }
+}
